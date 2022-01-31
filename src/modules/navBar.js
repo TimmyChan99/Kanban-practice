@@ -1,8 +1,7 @@
 import logo from '../../asset/resource/logo.jpeg';
 
-const nav = document.querySelector('.nav-container');
-
 const renderNavBar = () => {
+  const nav = document.querySelector('.nav-container');
   const navs = `<ul class="nav">
         <li class='list-logo'>
           <a href="#">
