@@ -1,11 +1,14 @@
+import logo from '../../asset/resource/logo.jpeg';
+
 const nav = document.querySelector('.nav-container');
 
 const renderNavBar = () => {
   const navs = `<ul class="nav">
-        <li>
+        <li class='list-logo'>
           <a href="#">
-            <img src="../asset/resource/logo.jpeg" class="logo" alt="Event logo" />
+            <img src=${logo} class="logo" alt="Event logo" />
           </a>
+          <span class="ename">Evenue</span>
         </li>
         <li>
           <a href="#">Events</a>

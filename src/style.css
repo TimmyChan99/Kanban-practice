@@ -14,6 +14,7 @@ ul {
   --nav-font-color: #d3d3d3;
 }
 
+/* NavBar */
 .nav-container {
   background: var(--nav-bg-color);
   color: var(--nav-font-color);
@@ -28,9 +29,21 @@ ul {
   margin: 0 auto;
 }
 
+.list-logo {
+  display: flex;
+  align-items: center;
+}
+
+.ename {
+  color: var(--nav-font-color);
+  margin-left: 10px;
+}
+
 .logo {
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding-top: 10px;
 }
 
 a {
