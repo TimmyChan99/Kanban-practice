@@ -3,7 +3,6 @@ const api = 'https://app.ticketmaster.com/discovery/v2/events?apikey=AvfGG6nhxrH
 const getAndDisplay = async () => {
     const getEvents = await fetch(api);
     const reponse = await getEvents.json();
-    console.log(reponse);
 
     const eventsList = document.querySelector('.events_list');
 
