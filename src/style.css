@@ -56,6 +56,18 @@ a {
   flex-direction: row;
 }
 
+/* events list*/
+
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+img {
+  width: 305px;
+  height: 225px;
+}
+
 /* footer */
 
 footer {
@@ -70,3 +82,5 @@ footer {
   width: 100vw;
   bottom: 0;
 }
+
+
