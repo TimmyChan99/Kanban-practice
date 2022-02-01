@@ -16,8 +16,8 @@ const modalDisplay = (id) => {
             <h2>${event.name}</h2>
   
             <div class="modal-classification">
-              <span>${event.classifications[0].genre.name}</span>
-              <span>${event.dates.start.localDate}</span>
+              <span>Event Type: ${event.classifications[0].genre.name}</span>
+              <span>Date: ${event.dates.start.localDate}</span>
             </div>
           </div>
   

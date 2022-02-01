@@ -89,6 +89,31 @@ img {
   width: 50%;
   height: 80vh;
   overflow: auto;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .img-contianer {
@@ -100,6 +125,7 @@ img {
 .img-contianer img {
   margin-top: 30px;
   width: 100%;
+  object-fit: cover;
 }
 
 .img-contianer p {
@@ -142,6 +168,8 @@ img {
 }
 
 form {
+  display: flex;
+  flex-direction: column;
   width: 70%;
   margin: 0 auto;
 }
@@ -171,7 +199,7 @@ input[type='text'] {
   height: 40px;
   justify-content: center;
   line-height: 24px;
-  max-width: 50%;
+  max-width: 30%;
   padding: 0 20px;
   position: relative;
   text-align: center;
@@ -210,6 +238,8 @@ input[type='text'] {
 }
 
 textarea {
+  width: 350px;
+  height: 150px;
   padding: 8px;
 }
 
