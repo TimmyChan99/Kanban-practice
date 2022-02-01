@@ -99,10 +99,17 @@ body {
 }
 
 .image {
+  position: relative;
   width: 100%;
   height: 200px;
   /* Media query 
   min_width:1200px -> height: 60% */
+}
+
+.likes {
+ position: absolute;
+ background-color: #fff;
+ width: 30%;
 }
 
 img {
