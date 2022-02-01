@@ -5,6 +5,47 @@
   font-family: 'Poppins', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
+:root {
+  --nav-bg-color: #0b0434;
+  --nav-font-color: #d3d3d3;
+}
+
+/* NavBar */
+.nav-container {
+  background: var(--nav-bg-color);
+  color: var(--nav-font-color);
+}
+
+.nav {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.list-logo {
+  display: flex;
+  align-items: center;
+}
+
+.ename {
+  color: var(--nav-font-color);
+  margin-left: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+
 a {
   text-decoration: none;
   color: #91a7c5;
@@ -19,7 +60,7 @@ a {
 
 footer {
   color: #6a7c94;
-  background-color: #0B0434;
+  background-color: #0b0434;
   height: 70px;
   align-items: center;
   justify-content: center;
