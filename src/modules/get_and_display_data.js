@@ -11,16 +11,20 @@ const getAndDisplay = async () => {
 
   for (let i = 0; i < 9; i += 1) {
     eventsList.innerHTML += `
-    <li class="the_event">
+    <li class="the_event d-flex-column">
           <div class="image">
-            <img src=${reponse._embedded.events[i].images[0].url} alt="">
+            <div class="likes d-flex-row">
+            <small class="like">Likes<span></span></small>
+              <i class="far fa-heart"></i>
+            </div>
+            <img src=${reponse._embedded.events[i].images[0].url} alt="event">
           </div>
-          <div class="event_info">
+          <div class="event_info d-flex-column">
             <h5 class="event_name">${reponse._embedded.events[i].name}</h5>
-            <p class="event_genre">${reponse._embedded.events[i].classifications[0].genre.name}</p>
+            <p class="event_genre">Genre:&nbsp; ${reponse._embedded.events[i].classifications[0].genre.name}</p>
             <p class="event_date">${reponse._embedded.events[i].dates.start.localDate}</p>
-            <button class="comment_btn" id=${reponse._embedded.events[i].id}>comment</button>
           </div>
+          <button class="comment_btn" id=${reponse._embedded.events[i].id}>comment</button>
         </li>
     `;
   }
