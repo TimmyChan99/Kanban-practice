@@ -109,7 +109,17 @@ body {
 .likes {
  position: absolute;
  background-color: #fff;
- width: 30%;
+ width: 70px;
+ border-radius: 8px;
+ align-items: center;
+ justify-content: space-around;
+ padding: 5px;
+ right: 7%;
+ top: 4%;
+}
+
+.fa-heart {
+  color: #7848f4;
 }
 
 img {

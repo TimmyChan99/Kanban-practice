@@ -11,9 +11,10 @@ const getAndDisplay = async () => {
         eventsList.innerHTML += `
     <li class="the_event d-flex-column">
           <div class="image">
-          <div class="likes">
-          <img src="" alt="">
-          </div>
+            <div class="likes d-flex-row">
+            <small class="like">Likes<span></span></small>
+              <i class="far fa-heart"></i>
+            </div>
             <img src=${reponse._embedded.events[i].images[0].url} alt="event">
           </div>
           <div class="event_info d-flex-column">
