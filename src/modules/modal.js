@@ -32,10 +32,10 @@ const modalDisplay = (id) => {
           <form>
             <h2>Add new comment</h2>
             <label for="name">
-              <input type="text" name="name" id="name" placeholder="Your name" />
+              <input type="text" name="name" id="name" placeholder="Your name" required/>
             </label>
             <label for="comment">
-              <textarea name="commen" id="comment" cols="30" rows="10" placeholder="Your insights"></textarea>
+              <textarea name="commen" id="comment" cols="30" rows="10" placeholder="Your insights" required></textarea>
             </label>
             <input type="button" value="Comment" class="btn" />
           </form>`;
