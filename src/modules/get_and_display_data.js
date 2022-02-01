@@ -2,11 +2,15 @@ const api = 'https://app.ticketmaster.com/discovery/v2/events?apikey=AvfGG6nhxrH
 
 let data = '';
 
+
 const getAndDisplay = async () => {
   const getEvents = await fetch(api);
-  const reponse = await getEvents.json();
-  data = reponse;
 
+  const reponse = await getEvents.json();
+  
+  
+  data = reponse;
+  
   const eventsList = document.querySelector('.events_list');
 
   for (let i = 0; i < 9; i += 1) {
@@ -14,7 +18,7 @@ const getAndDisplay = async () => {
     <li class="the_event d-flex-column">
           <div class="image">
             <div class="likes d-flex-row">
-            <small class="like">Likes<span></span></small>
+              <small class="like"><span class="number_of_likes"></span>&nbsp;Likes</small>
               <i class="far fa-heart"></i>
             </div>
             <img src=${reponse._embedded.events[i].images[0].url} alt="event">
