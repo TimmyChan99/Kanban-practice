@@ -22,11 +22,8 @@ const modalDisplay = (id) => {
           </div>
   
           <div class="comments">
-            <h2>Comments</h2>
-            <ul>
-              <li>Date and comments</li>
-              <li>Date and comments</li>
-              <li>Date and comments</li>
+            <h2 class="comment-header">Comments</h2>
+            <ul class="comments-sect">
             </ul>
           </div>
           <form id='comment-form'>

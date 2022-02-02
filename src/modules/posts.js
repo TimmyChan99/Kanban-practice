@@ -31,6 +31,7 @@ const addComment = async () => {
     username,
     comment,
   };
+  console.log(newComment);
   await postComment(BASE_URL, newComment);
   name.value = '';
   comments.value = '';

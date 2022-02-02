@@ -4,23 +4,27 @@ import renderNavBar from './modules/navBar';
 import { getAndDisplay } from './modules/get_and_display_data';
 import modalDisplay from './modules/modal';
 import addComment from './modules/posts';
+import getComment from './modules/getComments';
+
 const API_KEY = '6z6I8v1vgq10YNsH5ORA';
-const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments`;
+const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments?item_id=`;
 
 renderNavBar();
 
 window.addEventListener('load', () => {
   getAndDisplay();
 });
+
 const elements = {};
 const eventLists = document.querySelector('.events_list');
 const modal = document.querySelector('.modal');
-eventLists.addEventListener('click', (e) => {
+eventLists.addEventListener('click', async (e) => {
   if (e.target.tagName === 'BUTTON') {
     const id = e.target.id;
     elements.id = id;
     modal.style.display = 'block';
     modalDisplay(id);
+    await getComment(`${BASE_URL}${id}`);
   }
 });
 

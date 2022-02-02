@@ -64,7 +64,7 @@ body {
 
 .d-flex-column {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .content {
@@ -107,15 +107,15 @@ body {
 }
 
 .likes {
- position: absolute;
- background-color: #fff;
- width: 70px;
- border-radius: 8px;
- align-items: center;
- justify-content: space-around;
- padding: 5px;
- right: 7%;
- top: 4%;
+  position: absolute;
+  background-color: #fff;
+  width: 70px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  right: 7%;
+  top: 4%;
 }
 
 .fa-heart {
@@ -135,7 +135,6 @@ img {
   text-align: center;
   margin: 5%;
 }
-
 
 .event_name {
   font-size: 1em;
@@ -257,6 +256,17 @@ img {
   padding: 10px;
 }
 
+.comments-sect {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-sect li {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -332,7 +342,6 @@ textarea {
   height: 150px;
   padding: 8px;
 }
-
 
 /* footer */
 
