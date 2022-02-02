@@ -29,7 +29,7 @@ const modalDisplay = (id) => {
               <li>Date and comments</li>
             </ul>
           </div>
-          <form>
+          <form id='comment-form'>
             <h2>Add new comment</h2>
             <label for="name">
               <input type="text" name="name" id="name" placeholder="Your name" required/>
@@ -37,7 +37,7 @@ const modalDisplay = (id) => {
             <label for="comment">
               <textarea name="commen" id="comment" cols="30" rows="10" placeholder="Your insights" required></textarea>
             </label>
-            <input type="button" value="Comment" class="btn" />
+            <button type="button" class="btn">Comment</button>
           </form>`;
     }
   });
