@@ -1,7 +1,7 @@
 
-
+// send like to the API
 const sendlikes = async (id) => {
-    const api = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R5uHxKZNUcWGP0nFHGNS/likes/";
+    const api = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fJYfkFeKFk1eEpS2TLrj/likes/";
     const url = await fetch(api, {
         method: 'POST',
         body: JSON.stringify({
@@ -12,24 +12,39 @@ const sendlikes = async (id) => {
         },
 });
 
-}
+ }
 
 const heartReact = (target) => {
-    
+       
     if (target.getAttribute('data-prefix') === 'far'){
         target.setAttribute('data-prefix', 'fas');
     } 
 }
 
-const updateLikes = async () => {
-    const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R5uHxKZNUcWGP0nFHGNS/likes/';
+// Get likes from API 
+
+const getLikes = async () => {
+    const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fJYfkFeKFk1eEpS2TLrj/likes/';
     const getLikes = await fetch(apiLikes);
     const likesNumber = await getLikes.json();
-    const span = document.querySelectorAll('.number_of_likes');
     
-    span.forEach((event, i) => {
-        event.innerText = likesNumber[i].likes;
-    })
+    likesNumber.sort((a, b) => {
+        return a.item_id - b.item_id;
+      });      
+      
+    return likesNumber;
 }
 
- export { sendlikes, heartReact, updateLikes };
+// Update API 
+
+const updateLikes = async (span, id) => {
+    const likesNumber = await getLikes();
+    likesNumber.forEach(item => {
+        if(item.item_id == id) {
+          span.innerHTML = item.likes + 1;
+        }
+     });
+}
+
+
+ export { sendlikes, heartReact, updateLikes, getLikes };
