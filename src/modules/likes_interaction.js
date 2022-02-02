@@ -35,16 +35,6 @@ const getLikes = async () => {
     return likesNumber;
 }
 
-// Update API 
-
-const updateLikes = async (span, id) => {
-    const likesNumber = await getLikes();
-    likesNumber.forEach(item => {
-        if(item.item_id == id) {
-          span.innerHTML = item.likes + 1;
-        }
-     });
-}
 
 
- export { sendlikes, heartReact, updateLikes, getLikes };
+ export { sendlikes, heartReact, getLikes };
