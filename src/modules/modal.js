@@ -1,4 +1,5 @@
-import { data } from './get_and_display_data';
+/* eslint-disable no-underscore-dangle */
+import { data } from './get_and_display_data.js';
 
 const modalDisplay = (id) => {
   const extractData = data._embedded.events;
