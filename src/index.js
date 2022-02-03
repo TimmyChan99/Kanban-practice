@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import './style.css';
+import './mobile_ver.css';
 import renderNavBar from './modules/navBar';
 import { getAndDisplay } from './modules/get_and_display_data';
 import modalDisplay from './modules/modal';
