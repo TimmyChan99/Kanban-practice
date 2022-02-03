@@ -1,43 +1,44 @@
-import { data } from './get_and_display_data';
+import { data } from './get_and_display_data.js';
 
-const modalDisplay = (id) => {
-  const extractData = data._embedded.events;
+const modalDisplay = (id, e) => {
+  const extractData = e.target.parentNode;
+  const listItems = document.querySelectorAll('.the_event');
+
+  //const extractData = data._embedded.events;
   const popUp = document.querySelector('.modal-content');
   let view = '';
-  extractData.forEach((event) => {
+  listItems.forEach((event) => {
     if (event.id === id) {
       view += `
           <div class="img-contianer">
-            <img src=${event.images[0].url} alt="" />
+            <img src=${event.childNodes[1].childNodes[3].src} alt="" />
             <p class="close-btn">&times;</p>
           </div>
   
           <div class="modal-info">
-            <h2>${event.name}</h2>
+            <h2>${event.children[1].children[0].textContent}</h2>
   
             <div class="modal-classification">
-              <span>Event Type: ${event.classifications[0].genre.name}</span>
-              <span>Date: ${event.dates.start.localDate}</span>
+              <span> ${event.children[1].children[1].textContent}</span>
+              <span>Date: <br>${event.children[1].children[2].textContent} </span>
             </div>
           </div>
   
           <div class="comments">
-            <h2>Comments</h2>
-            <ul>
-              <li>Date and comments</li>
-              <li>Date and comments</li>
-              <li>Date and comments</li>
+            <h2 class="comment-header">Comments</h2>
+            <ul class="comments-sect">
             </ul>
           </div>
-          <form>
+          <form id='comment-form'>
             <h2>Add new comment</h2>
+            <span class='validate-message'>message</span>
             <label for="name">
-              <input type="text" name="name" id="name" placeholder="Your name" />
+              <input type="text" name="name" id="name" placeholder="Your name" required/>
             </label>
             <label for="comment">
-              <textarea name="commen" id="comment" cols="30" rows="10" placeholder="Your insights"></textarea>
+              <textarea name="commen" id="comment" cols="30" rows="10" placeholder="Your insights" required></textarea>
             </label>
-            <input type="button" value="Comment" class="btn" />
+            <button type="button" class="btn">Comment</button>
           </form>`;
     }
   });

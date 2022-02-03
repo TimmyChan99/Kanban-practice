@@ -64,7 +64,7 @@ body {
 
 .d-flex-column {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .content {
@@ -107,15 +107,24 @@ body {
 }
 
 .likes {
- position: absolute;
- background-color: #fff;
- width: 80px;
- border-radius: 8px;
- align-items: center;
- justify-content: space-around;
- padding: 5px;
- right: 7%;
- top: 4%;
+  position: absolute;
+  background-color: #fff;
+  width: 70px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  right: 7%;
+  top: 4%;
+  position: absolute;
+  background-color: #fff;
+  width: 80px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  right: 7%;
+  top: 4%;
 }
 
 .fa-heart {
@@ -135,7 +144,6 @@ img {
   text-align: center;
   margin: 5%;
 }
-
 
 .event_name {
   font-size: 1em;
@@ -255,6 +263,19 @@ img {
 
 .comments ul {
   padding: 10px;
+  width: 100%;
+}
+
+.comments-sect {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-sect li {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  align-items: center;
 }
 
 form {
@@ -333,7 +354,13 @@ textarea {
   padding: 8px;
 }
 
-
+.validate-message {
+  display: none;
+  font-size: 13px;
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
 /* footer */
 
 footer {
