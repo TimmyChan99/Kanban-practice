@@ -29,10 +29,10 @@ const getAndDisplay = async () => {
             <p class="event_genre">Genre:&nbsp; ${reponse._embedded.events[i].classifications[0].genre.name}</p>
             <p class="event_date">${reponse._embedded.events[i].dates.start.localDate}</p>
           </div>
-          <button class="comment_btn" id=${reponse._embedded.events[i].id}>comment</button>
+          <button class="comment_btn">comment</button>
         </li>
     `;
   }
 };
-
+//<button class="comment_btn" id=${reponse._embedded.events[i].id}>comment</button>
 export { data, getAndDisplay };

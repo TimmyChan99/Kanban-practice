@@ -4,6 +4,7 @@ import renderNavBar from './modules/navBar.js';
 import { getAndDisplay } from './modules/get_and_display_data.js';
 import modalDisplay from './modules/modal.js';
 import addComment from './modules/posts.js';
+import { defaultComment } from './modules/posts.js';
 import getComment, { displayComments } from './modules/getComments.js';
 import { sendlikes, heartReact, getLikes } from './modules/likes_interaction.js';
 import { likesCounter } from './modules/likesCounter.js';
@@ -20,13 +21,16 @@ window.addEventListener('load', () => {
 const eventLists = document.querySelector('.events_list');
 const modal = document.querySelector('.modal');
 eventLists.addEventListener('click', async (e) => {
+  e.stopPropagation();
   if (e.target.tagName === 'BUTTON') {
-    const id = e.target.id;
+    const id = e.target.parentNode.id;
     elements.id = id;
     console.log(id);
     modal.style.display = 'block';
-    modalDisplay(id);
+    modalDisplay(id, e);
     const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments?item_id=${id}`;
+    //await defaultComment(id);
+
     await getComment(`${BASE_URL}`);
   }
 });
@@ -58,7 +62,6 @@ modalContainer.addEventListener('click', async (e) => {
   }
 });
 
-export { elements };
 eventLists.addEventListener('click', async (e) => {
   if (e.target.classList.contains('fa-heart')) {
     const id = e.target.parentNode.parentNode.parentNode.id;
@@ -70,3 +73,19 @@ eventLists.addEventListener('click', async (e) => {
     likesCounter(likesNumber, id, span);
   }
 });
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   //await defaultComment();
+//   const li = document.querySelector('.the_event');
+//  console.log(li);
+//   // eventLists.forEach(card => {
+//   //   console.log(card.id);
+//   // });
+// })
+
+// eventLists.addEventListener('click', async () => {
+//   await defaultComment();
+//   console.log('once');
+// }, {once: true})
+
+export { elements };

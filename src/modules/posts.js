@@ -47,4 +47,17 @@ const addComment = async () => {
   comments.value = '';
 };
 
+
+async function defaultComment(id){
+  const newComment = {
+    item_id: 1,
+    username: "ana",
+    comment: "Hi",
+  };
+ 
+  await postComment(BASE_URL, newComment);
+  return newComment;
+}
+
 export default addComment;
+export { defaultComment };
