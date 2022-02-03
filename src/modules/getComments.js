@@ -3,7 +3,7 @@ import commentCounter from './commentCounter.js';
 
 const getComment = async (url) => {
   let result = '';
-  const btn = document.querySelector('.comment_btn');
+  const btn = document.querySelector('.comment_btn').parentNode;
   const commentSection = document.querySelector('.comments-sect');
   let response ;
  
