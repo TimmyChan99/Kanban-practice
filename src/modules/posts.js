@@ -41,23 +41,22 @@ const addComment = async () => {
     username: name.value,
     comment: comments.value,
   };
-  console.log(newComment);
+
   await postComment(BASE_URL, newComment);
   name.value = '';
   comments.value = '';
 };
 
+// async function defaultComment(id){
+//   const newComment = {
+//     item_id: 1,
+//     username: "ana",
+//     comment: "Hi",
+//   };
 
-async function defaultComment(id){
-  const newComment = {
-    item_id: 1,
-    username: "ana",
-    comment: "Hi",
-  };
- 
-  await postComment(BASE_URL, newComment);
-  return newComment;
-}
+//   await postComment(BASE_URL, newComment);
+//   return newComment;
+// }
 
 export default addComment;
-export { defaultComment };
+// export { defaultComment };

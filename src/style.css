@@ -263,6 +263,7 @@ img {
 
 .comments ul {
   padding: 10px;
+  width: 100%;
 }
 
 .comments-sect {
@@ -272,8 +273,9 @@ img {
 
 .comments-sect li {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   font-size: 14px;
+  align-items: center;
 }
 
 form {

@@ -1,16 +1,14 @@
 import { data } from './get_and_display_data.js';
 
 const modalDisplay = (id, e) => {
-  const extractData  = e.target.parentNode;
+  const extractData = e.target.parentNode;
   const listItems = document.querySelectorAll('.the_event');
-  
+
   //const extractData = data._embedded.events;
   const popUp = document.querySelector('.modal-content');
   let view = '';
   listItems.forEach((event) => {
-    
     if (event.id === id) {
-      console.log(event.children[1].children[0].textContent);
       view += `
           <div class="img-contianer">
             <img src=${event.childNodes[1].childNodes[3].src} alt="" />
