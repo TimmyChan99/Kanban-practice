@@ -6,8 +6,12 @@ const getComment = async (url) => {
   const btn = document.querySelector('.comment_btn');
   const commentSection = document.querySelector('.comments-sect');
   try {
-    isResultEmpty(btn.id, url);
     const response = await axios.get(`${url}`);
+
+    // if (response.error.message == "'item_id' not found.") {
+    //   isResultEmpty(commentSection);
+    //   return null;
+    // }
 
     result = response.data;
     displayComments(result, commentSection);
@@ -24,7 +28,7 @@ const getComment = async (url) => {
 const displayComments = (arr, container) => {
   for (let comment = 0; comment < arr.length; comment += 1) {
     container.innerHTML += `
-      <li>
+      <li class='comment-list'>
       <span>${arr[comment].creation_date}</span> 
       <span>${arr[comment].username}: </span>
       <span>${arr[comment].comment}</span>
@@ -33,11 +37,9 @@ const displayComments = (arr, container) => {
   }
 };
 
-const isResultEmpty = (id, url) => {
-  if (id && !url) {
-    console.log(response);
-    container.innerHTML += '<li>No comment found.</li>';
-  }
+const isResultEmpty = (container) => {
+  // console.log(response);
+  container.innerHTML += '<li>No comment found.</li>';
 };
 
 // export const refreshComments = () => displayComments();
