@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { elements } from '../index';
+import { elements } from '../index.js';
 
 const API_KEY = '6z6I8v1vgq10YNsH5ORA';
 const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments`;

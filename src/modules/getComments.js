@@ -1,22 +1,20 @@
 import axios from 'axios';
-import commentCounter from './commentCounter';
+import commentCounter from './commentCounter.js';
 
 const getComment = async (url) => {
   let result = '';
   const btn = document.querySelector('.comment_btn');
   const commentSection = document.querySelector('.comments-sect');
   try {
-    const response = await axios.get(`${url}`);
+    const response = await fetch(`${url}`);
 
-    // if (response.error.message == "'item_id' not found.") {
-    //   isResultEmpty(commentSection);
-    //   return null;
-    // }
-
-    result = response.data;
+    if (!response.json) {
+      return Promise.reject.bind(Promise);
+    }
+    result = response.json();
     displayComments(result, commentSection);
   } catch (error) {
-    throw error.message;
+    isResultEmpty(commentSection);
   }
 
   const header = document.querySelector('.comment-header');
@@ -38,7 +36,6 @@ const displayComments = (arr, container) => {
 };
 
 const isResultEmpty = (container) => {
-  // console.log(response);
   container.innerHTML += '<li>No comment found.</li>';
 };
 

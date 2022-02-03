@@ -30,6 +30,6 @@ describe('check comment counter', () => {
       },
     ];
 
-    expect(commentCounter(id, comments.length)).toBe(5);
+    expect(commentCounter(id, comments)).toBe(5);
   });
 });
