@@ -40,5 +40,4 @@ const isResultEmpty = (container) => {
 };
 
 // export const refreshComments = () => displayComments();
-
 export default getComment;
