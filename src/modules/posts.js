@@ -16,20 +16,30 @@ const postComment = async (url, comment) => {
   return newPost;
 };
 
+const toastMsg = async () => {
+  const errorMsg = document.querySelector('.validate-message');
+  errorMsg.style.display = 'block';
+  errorMsg.textContent = 'Please add name and comment to proceed';
+  setTimeout(() => {
+    errorMsg.style.display = 'none';
+  }, 3000);
+};
+
 const addComment = async () => {
   const { input: name, textarea: comments, id } = elements;
   const item_id = id;
-  const username = name.value;
-  const comment = comments.value;
+  const username = name;
+  const comment = comments;
 
-  if (username === '' && comment === '') {
-    alert('Please enter a comment');
+  if (!username && !comment) {
+    toastMsg();
+    return null;
   }
 
   const newComment = {
     item_id,
-    username,
-    comment,
+    username: name.value,
+    comment: comments.value,
   };
   console.log(newComment);
   await postComment(BASE_URL, newComment);

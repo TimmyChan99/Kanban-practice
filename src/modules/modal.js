@@ -28,6 +28,7 @@ const modalDisplay = (id) => {
           </div>
           <form id='comment-form'>
             <h2>Add new comment</h2>
+            <span class='validate-message'>message</span>
             <label for="name">
               <input type="text" name="name" id="name" placeholder="Your name" required/>
             </label>

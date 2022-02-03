@@ -1,37 +1,45 @@
 import axios from 'axios';
+import commentCounter from './commentCounter';
 
 const getComment = async (url) => {
   let result = '';
+  const btn = document.querySelector('.comment_btn');
+  const commentSection = document.querySelector('.comments-sect');
   try {
+    isResultEmpty(btn.id, url);
     const response = await axios.get(`${url}`);
-    result = response.data;
 
-    const commentSection = document.querySelector('.comments-sect');
-    for (let comment = 0; comment < result.length; comment += 1) {
-      commentSection.innerHTML += `
-      <li>
-      <span>${result[comment].creation_date}</span> 
-      <span>${result[comment].username}: </span>
-      <spna>${result[comment].comment}</spna>
-      </li> 
-      `;
-    }
+    result = response.data;
+    displayComments(result, commentSection);
   } catch (error) {
     throw error.message;
   }
 
   const header = document.querySelector('.comment-header');
-  const btn = document.querySelector('.comment_btn');
-
-  const commentCounter = (id, arr) => {
-    if (id) {
-      return arr.length;
-    }
-  };
-
   header.textContent = `Comments (${commentCounter(btn.id, result)})`;
 
   return result;
 };
+
+const displayComments = (arr, container) => {
+  for (let comment = 0; comment < arr.length; comment += 1) {
+    container.innerHTML += `
+      <li>
+      <span>${arr[comment].creation_date}</span> 
+      <span>${arr[comment].username}: </span>
+      <span>${arr[comment].comment}</span>
+      </li> 
+      `;
+  }
+};
+
+const isResultEmpty = (id, url) => {
+  if (id && !url) {
+    console.log(response);
+    container.innerHTML += '<li>No comment found.</li>';
+  }
+};
+
+// export const refreshComments = () => displayComments();
 
 export default getComment;
