@@ -10,7 +10,7 @@ const renderNavBar = () => {
           <span class="ename">Evenue</span>
         </li>
         <li>
-          <a href="#">Events</a>
+          <a href="#">Events (9)</a>
         </li>
         <li>
           <a href="#">Book Events</a>
