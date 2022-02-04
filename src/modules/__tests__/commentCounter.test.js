@@ -2,9 +2,10 @@
  * @jest-environment jsdom
  */
 
-import commentCounter from '../commentCounter';
+import commentCounter from '../commentCounter.js';
+
 const id = Math.random().toString(36).slice(2);
-const item_id = id;
+const itemId = id;
 const comments = [
   {
     comment: 'testnet ',
@@ -33,22 +34,22 @@ const comments = [
   },
 ];
 
-const comment_2 = [];
+const comment2 = [];
 
-document.body.innerHTML = `<h2 class="comment-header">${commentCounter(item_id, comments)}</h2>`;
+document.body.innerHTML = `<h2 class="comment-header">${commentCounter(itemId, comments)}</h2>`;
 const h2 = document.querySelector('.comment-header');
 
 describe('check comment counter', () => {
   test('should return length of comment per event', () => {
-    expect(commentCounter(item_id, comments)).toBe(5);
+    expect(commentCounter(itemId, comments)).toBe(5);
   });
 
   test('should return counter length in header', () => {
-    commentCounter(item_id, comments);
+    commentCounter(itemId, comments);
     expect(h2.innerHTML).toBe('5');
   });
 
   test('should return zero', () => {
-    expect(commentCounter(item_id, comment_2)).toBe(0);
+    expect(commentCounter(itemId, comment2)).toBe(0);
   });
 });

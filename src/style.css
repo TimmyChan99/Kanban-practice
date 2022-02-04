@@ -79,7 +79,7 @@ body {
   color: #131315;
 }
 
-/* events list*/
+/* events list */
 
 .d-grid {
   display: grid;
@@ -102,7 +102,8 @@ body {
   position: relative;
   width: 100%;
   height: 200px;
-  /* Media query 
+
+  /* Media query
   min_width:1200px -> height: 60% */
 }
 
@@ -110,15 +111,6 @@ body {
   position: absolute;
   background-color: #fff;
   width: 70px;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: space-around;
-  padding: 5px;
-  right: 7%;
-  top: 4%;
-  position: absolute;
-  background-color: #fff;
-  width: 80px;
   border-radius: 8px;
   align-items: center;
   justify-content: space-around;
@@ -198,16 +190,19 @@ img {
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
   }
 }
+
 @keyframes animatetop {
   from {
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
@@ -235,6 +230,11 @@ img {
 .modal-info {
   width: 90%;
   margin: 0 auto;
+}
+
+form h2 {
+  margin: 10px 0 10px 0;
+  text-align: center;
 }
 
 .modal-info h2 {
@@ -283,11 +283,6 @@ form {
   flex-direction: column;
   width: 70%;
   margin: 0 auto;
-}
-
-form h2 {
-  margin: 10px 0 10px 0;
-  text-align: center;
 }
 
 input[type='text'] {
@@ -361,6 +356,7 @@ textarea {
   text-align: center;
   margin-bottom: 10px;
 }
+
 /* footer */
 
 footer {

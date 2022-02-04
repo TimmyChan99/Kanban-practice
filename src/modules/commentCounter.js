@@ -1,7 +1,3 @@
-const commentCounter = (id, arr) => {
-  if (id) {
-    return arr.length;
-  }
-};
+const commentCounter = (id, arr) => (id ? arr.length : 'array can not be empty');
 
 export default commentCounter;

@@ -1,16 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 import { getLikes } from './likes_interaction.js';
 
 const api = 'https://app.ticketmaster.com/discovery/v2/events?apikey=AvfGG6nhxrHNoLBve2IVp4jYw6lxQAMI&locale=*&page=5';
-
-let data = '';
 
 const getAndDisplay = async () => {
   const getEvents = await fetch(api);
 
   const reponse = await getEvents.json();
   const likesNumber = await getLikes();
-
-  data = reponse;
 
   const eventsList = document.querySelector('.events_list');
 
@@ -34,5 +31,5 @@ const getAndDisplay = async () => {
     `;
   }
 };
-//<button class="comment_btn" id=${reponse._embedded.events[i].id}>comment</button>
-export { data, getAndDisplay };
+
+export default getAndDisplay;

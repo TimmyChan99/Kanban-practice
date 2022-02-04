@@ -1,13 +1,12 @@
 import axios from 'axios';
-import { elements } from '../index.js';
 
-const API_KEY = '6z6I8v1vgq10YNsH5ORA';
-const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments`;
+const postComment = async (comment) => {
+  const API_KEY = '6z6I8v1vgq10YNsH5ORA';
+  const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments`;
 
-const postComment = async (url, comment) => {
   let newPost = '';
   try {
-    const response = await axios.post(`${url}`, comment);
+    const response = await axios.post(BASE_URL, comment);
     newPost = await response.data;
   } catch (error) {
     throw error.message;
@@ -25,38 +24,20 @@ const toastMsg = async () => {
   }, 3000);
 };
 
-const addComment = async () => {
-  const { input: name, textarea: comments, id } = elements;
-  const item_id = id;
-  const username = name;
-  const comment = comments;
-
+const addComment = async (id, username, comment) => {
   if (!username && !comment) {
     toastMsg();
-    return null;
   }
 
   const newComment = {
-    item_id,
-    username: name.value,
-    comment: comments.value,
+    item_id: id,
+    username,
+    comment,
   };
 
-  await postComment(BASE_URL, newComment);
-  name.value = '';
-  comments.value = '';
+  await postComment(newComment);
+
+  return newComment;
 };
 
-// async function defaultComment(id){
-//   const newComment = {
-//     item_id: 1,
-//     username: "ana",
-//     comment: "Hi",
-//   };
-
-//   await postComment(BASE_URL, newComment);
-//   return newComment;
-// }
-
 export default addComment;
-// export { defaultComment };
