@@ -4,6 +4,15 @@
 
 > Evenue is a web application for displaying upcoming events using Ticketmaster API to display events and Involvement API for adding comments and likes.
 
+## Desktop Version
+
+![image](https://user-images.githubusercontent.com/92228303/152538811-ddfc92f1-fab0-4445-a720-df7a1847f111.png)
+
+## Mobile Version
+
+![image](https://user-images.githubusercontent.com/92228303/152538850-17a645cc-4858-4ad8-ab6f-590c2f364f49.png)
+
+
 ## Built With
 
 - JavaScript
@@ -15,7 +24,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://timmychan99.github.io/Kanban-practice/)
 
 ## Getting Started
 
