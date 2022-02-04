@@ -1,5 +1,6 @@
 /* eslint-disable import/no-cycle */
 import './style.css';
+import './mobile_ver.css';
 import renderNavBar from './modules/navBar.js';
 import { getAndDisplay } from './modules/get_and_display_data.js';
 import modalDisplay from './modules/modal.js';
@@ -10,6 +11,7 @@ import { likesCounter } from './modules/likesCounter.js';
 
 const elements = {};
 const API_KEY = '6z6I8v1vgq10YNsH5ORA';
+
 
 renderNavBar();
 
