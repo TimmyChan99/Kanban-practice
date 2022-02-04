@@ -33,7 +33,7 @@ const modalDisplay = (id) => {
             <label for="comment">
               <textarea name="commen" id="comment" cols="30" rows="10" placeholder="Your insights" required></textarea>
             </label>
-            <button type="button" class="btn">Comment</button>
+            <button type="button" class="btn" id=${event.id}>Comment</button>
           </form>`;
     }
   });

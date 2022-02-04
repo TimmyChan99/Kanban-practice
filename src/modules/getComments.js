@@ -1,9 +1,11 @@
 import axios from 'axios';
 import commentCounter from './commentCounter.js';
 
-export const displayComments = (arr, container) => {
+export const displayComments = (arr) => {
+  const commentSection = document.querySelector('.comments-sect');
+  commentSection.innerHTML = '';
   for (let comment = 0; comment < arr.length; comment += 1) {
-    container.innerHTML += `
+    commentSection.innerHTML += `
       <li class='comment-list'>
       <span>${arr[comment].creation_date}</span> 
       <span>${arr[comment].username}: </span>
@@ -16,12 +18,12 @@ export const displayComments = (arr, container) => {
 const getComment = async (url) => {
   let result = '';
   const btn = document.querySelector('.comment_btn').parentNode;
-  const commentSection = document.querySelector('.comments-sect');
+ // const commentSection = document.querySelector('.comments-sect');
 
   const response = await axios.get(`${url}`);
 
   result = response.data;
-  displayComments(result, commentSection);
+  displayComments(result);
 
   const header = document.querySelector('.comment-header');
   header.textContent = `Comments (${commentCounter(btn.id, result)})`;

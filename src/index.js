@@ -41,25 +41,40 @@ closeModal.addEventListener('click', (e) => {
 const modalContainer = document.querySelector('.modal-content');
 
 modalContainer.addEventListener('click', async (e) => {
+
   if (e.target.tagName === 'BUTTON') {
-    await addComment();
+    const id = e.target.id;
+   const inputName = document.querySelector('#name');
+   const inputText = document.querySelector('#comment');
+    console.log(id, inputName.value, inputText.value);
+    await addComment(id, inputName.value, inputText.value);
 
-    window.addEventListener('load', () => {
-      displayComments();
-    });
+
+    
+    console.log(e.target.id);
+    const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments?item_id=${id}`;
+    const response = await getComment(`${BASE_URL}`);
+    console.log(response);
+
+    const form = document.querySelector('#comment-form');
+    form.reset();
+    // displayComments(respone);
+    // window.addEventListener('load', () => {
+    //   displayComments();
+    // });
   }
 
-  if (e.target.tagName === 'INPUT') {
-    const input = e.target;
-    input.setAttribute('required', 'required');
-    elements.input = input;
-  }
+  // if (e.target.tagName === 'INPUT') {
+  //   const input = e.target;
+  //  // input.setAttribute('required', 'required');
+  //  // elements.input = input;
+  // }
 
-  if (e.target.tagName === 'TEXTAREA') {
-    const textarea = e.target;
-    textarea.setAttribute('required', 'required');
-    elements.textarea = textarea;
-  }
+  // if (e.target.tagName === 'TEXTAREA') {
+  //   const textarea = e.target;
+  //  // textarea.setAttribute('required', 'required');
+  //  // elements.textarea = textarea;
+  //}
 });
 
 eventLists.addEventListener('click', async (e) => {

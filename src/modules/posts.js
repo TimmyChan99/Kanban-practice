@@ -3,18 +3,20 @@
 import axios from 'axios';
 import elements from '../index.js';
 
-const API_KEY = '6z6I8v1vgq10YNsH5ORA';
-const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments`;
 
-const postComment = async (url, comment) => {
+
+const postComment = async (comment) => {
+  const API_KEY = '6z6I8v1vgq10YNsH5ORA';
+  const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments`;
+
   let newPost = '';
   try {
-    const response = await axios.post(`${url}`, comment);
+    const response = await axios.post(BASE_URL, comment);
     newPost = await response.data;
   } catch (error) {
     throw error.message;
   }
-
+  
   return newPost;
 };
 
@@ -27,11 +29,11 @@ const toastMsg = async () => {
   }, 3000);
 };
 
-const addComment = async () => {
-  const { input: name, textarea: comments, id } = elements;
-  const item_id = id;
-  const username = name;
-  const comment = comments;
+const addComment = async (item_id, username, comment) => {
+  // const { input: name, textarea: comments, id } = elements;
+  // const item_id = id;
+  // const username = name;
+  // const comment = comments;
 
   if (!username && !comment) {
     toastMsg();
@@ -40,13 +42,12 @@ const addComment = async () => {
 
   const newComment = {
     item_id,
-    username: name.value,
-    comment: comments.value,
+    username,
+    comment,
   };
 
-  await postComment(BASE_URL, newComment);
-  name.value = '';
-  comments.value = '';
+  await postComment(newComment);
+
 
   return newComment;
 };
