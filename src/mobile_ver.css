@@ -17,7 +17,7 @@
     align-self: center;
   }
 
-  /* events list*/
+  /* events list */
 
   .d-grid {
     grid-template-columns: 80vw;
@@ -35,6 +35,11 @@
 
   .img-contianer p {
     font-size: 30px;
+  }
+
+  form h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .modal-info h2 {
@@ -60,11 +65,6 @@
 
   form {
     width: 100%;
-  }
-
-  form h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
   }
 
   input[type='text'] {

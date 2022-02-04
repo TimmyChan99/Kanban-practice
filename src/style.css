@@ -232,6 +232,11 @@ img {
   margin: 0 auto;
 }
 
+form h2 {
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
 .modal-info h2 {
   font-size: 20px;
   text-align: center;
@@ -278,11 +283,6 @@ form {
   flex-direction: column;
   width: 70%;
   margin: 0 auto;
-}
-
-form h2 {
-  margin: 10px 0 10px 0;
-  text-align: center;
 }
 
 input[type='text'] {
