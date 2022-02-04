@@ -34,5 +34,5 @@ const getAndDisplay = async () => {
     `;
   }
 };
-//<button class="comment_btn" id=${reponse._embedded.events[i].id}>comment</button>
+
 export { data, getAndDisplay };

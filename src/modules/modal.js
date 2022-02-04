@@ -1,10 +1,5 @@
-import { data } from './get_and_display_data.js';
-
-const modalDisplay = (id, e) => {
-  const extractData = e.target.parentNode;
+const modalDisplay = (id) => {
   const listItems = document.querySelectorAll('.the_event');
-
-  //const extractData = data._embedded.events;
   const popUp = document.querySelector('.modal-content');
   let view = '';
   listItems.forEach((event) => {
@@ -20,7 +15,7 @@ const modalDisplay = (id, e) => {
   
             <div class="modal-classification">
               <span> ${event.children[1].children[1].textContent}</span>
-              <span>Date: <br>${event.children[1].children[2].textContent} </span>
+              <span>Date: ${event.children[1].children[2].textContent} </span>
             </div>
           </div>
   

@@ -1,5 +1,7 @@
+/* eslint-disable camelcase */
+/* eslint-disable import/no-cycle */
 import axios from 'axios';
-import { elements } from '../index.js';
+import elements from '../index.js';
 
 const API_KEY = '6z6I8v1vgq10YNsH5ORA';
 const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments`;
@@ -45,18 +47,8 @@ const addComment = async () => {
   await postComment(BASE_URL, newComment);
   name.value = '';
   comments.value = '';
+
+  return newComment;
 };
 
-// async function defaultComment(id){
-//   const newComment = {
-//     item_id: 1,
-//     username: "ana",
-//     comment: "Hi",
-//   };
-
-//   await postComment(BASE_URL, newComment);
-//   return newComment;
-// }
-
 export default addComment;
-// export { defaultComment };

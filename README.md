@@ -1,42 +1,49 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Evenue
 
-> Description the project.
-
+> Evenue is a web application for displaying upcoming events using Ticketmaster API to display events and Involvement API for adding comments and likes.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript
+- HTML
+- CSS
+- Axios
+- Webpack
+- Jest
 
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
 
-
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+clone repo: `git clone https://github.com/TimmyChan99/Kanban-practice.git`
+
+then
+
+`cd Kanban-practice`
+
 ### Setup
 
 ### Install
+
+run `npm install` to install dependencies
 
 ### Usage
 
 ### Run tests
 
+run `npm test` to run tests
+
 ### Deployment
 
-
+run `npm build` to run build and deployment
 
 ## Authors
 
