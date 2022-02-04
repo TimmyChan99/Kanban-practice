@@ -7,7 +7,7 @@ import modalDisplay from './modules/modal.js';
 import addComment from './modules/posts.js';
 import getComment, { displayComments } from './modules/getComments.js';
 import { sendlikes, heartReact, getLikes } from './modules/likes_interaction.js';
-import { likesCounter } from './modules/likesCounter.js';
+import likesCounter from './modules/likesCounter.js';
 
 const elements = {};
 const API_KEY = '6z6I8v1vgq10YNsH5ORA';
@@ -22,7 +22,7 @@ const eventLists = document.querySelector('.events_list');
 const modal = document.querySelector('.modal');
 eventLists.addEventListener('click', async (e) => {
   if (e.target.tagName === 'BUTTON') {
-    const id = e.target.parentNode.id;
+    const { id } = e.target.parentNode;
     elements.id = id;
     modal.style.display = 'block';
     modalDisplay(id, e);

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { likesCounter } from '../likesCounter.js';
+import likesCounter from '../likesCounter.js';
 
 const items = [
   {

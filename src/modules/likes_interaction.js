@@ -1,7 +1,7 @@
 // send like to the API
 const sendlikes = async (id) => {
   const api = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fJYfkFeKFk1eEpS2TLrj/likes/';
-  const url = await fetch(api, {
+  await fetch(api, {
     method: 'POST',
     body: JSON.stringify({
       item_id: id,

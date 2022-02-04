@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { getLikes } from './likes_interaction.js';
 
 const api = 'https://app.ticketmaster.com/discovery/v2/events?apikey=AvfGG6nhxrHNoLBve2IVp4jYw6lxQAMI&locale=*&page=5';
