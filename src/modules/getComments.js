@@ -18,7 +18,6 @@ export const displayComments = (arr) => {
 const getComment = async (url) => {
   let result = '';
   const btn = document.querySelector('.comment_btn').parentNode;
- // const commentSection = document.querySelector('.comments-sect');
 
   const response = await axios.get(`${url}`);
 

@@ -2,10 +2,10 @@
 import './style.css';
 import './mobile_ver.css';
 import renderNavBar from './modules/navBar.js';
-import { getAndDisplay } from './modules/get_and_display_data.js';
+import getAndDisplay from './modules/get_and_display_data.js';
 import modalDisplay from './modules/modal.js';
 import addComment from './modules/posts.js';
-import getComment, { displayComments } from './modules/getComments.js';
+import getComment from './modules/getComments.js';
 import { sendlikes, heartReact, getLikes } from './modules/likes_interaction.js';
 import likesCounter from './modules/likesCounter.js';
 
@@ -41,40 +41,19 @@ closeModal.addEventListener('click', (e) => {
 const modalContainer = document.querySelector('.modal-content');
 
 modalContainer.addEventListener('click', async (e) => {
-
   if (e.target.tagName === 'BUTTON') {
-    const id = e.target.id;
-   const inputName = document.querySelector('#name');
-   const inputText = document.querySelector('#comment');
-    console.log(id, inputName.value, inputText.value);
+    const { id } = e.target;
+    const inputName = document.querySelector('#name');
+    const inputText = document.querySelector('#comment');
+
     await addComment(id, inputName.value, inputText.value);
 
-
-    
-    console.log(e.target.id);
     const BASE_URL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${API_KEY}/comments?item_id=${id}`;
-    const response = await getComment(`${BASE_URL}`);
-    console.log(response);
+    await getComment(`${BASE_URL}`);
 
     const form = document.querySelector('#comment-form');
     form.reset();
-    // displayComments(respone);
-    // window.addEventListener('load', () => {
-    //   displayComments();
-    // });
   }
-
-  // if (e.target.tagName === 'INPUT') {
-  //   const input = e.target;
-  //  // input.setAttribute('required', 'required');
-  //  // elements.input = input;
-  // }
-
-  // if (e.target.tagName === 'TEXTAREA') {
-  //   const textarea = e.target;
-  //  // textarea.setAttribute('required', 'required');
-  //  // elements.textarea = textarea;
-  //}
 });
 
 eventLists.addEventListener('click', async (e) => {

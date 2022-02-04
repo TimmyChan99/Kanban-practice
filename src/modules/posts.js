@@ -1,9 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable import/no-cycle */
 import axios from 'axios';
-import elements from '../index.js';
-
-
 
 const postComment = async (comment) => {
   const API_KEY = '6z6I8v1vgq10YNsH5ORA';
@@ -16,7 +11,7 @@ const postComment = async (comment) => {
   } catch (error) {
     throw error.message;
   }
-  
+
   return newPost;
 };
 
@@ -29,25 +24,18 @@ const toastMsg = async () => {
   }, 3000);
 };
 
-const addComment = async (item_id, username, comment) => {
-  // const { input: name, textarea: comments, id } = elements;
-  // const item_id = id;
-  // const username = name;
-  // const comment = comments;
-
+const addComment = async (id, username, comment) => {
   if (!username && !comment) {
     toastMsg();
-    return null;
   }
 
   const newComment = {
-    item_id,
+    item_id: id,
     username,
     comment,
   };
 
   await postComment(newComment);
-
 
   return newComment;
 };

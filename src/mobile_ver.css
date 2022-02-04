@@ -23,6 +23,63 @@
     grid-template-columns: 80vw;
   }
 
+  /* Modal */
+  .modal {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    height: 90vh;
+  }
+
+  .img-contianer p {
+    font-size: 30px;
+  }
+
+  .modal-info h2 {
+    font-size: 18px;
+  }
+
+  .modal-classification {
+    width: 90%;
+  }
+
+  .modal-classification span {
+    font-size: 13px;
+  }
+
+  .comments {
+    width: 95%;
+  }
+
+  .comments-sect {
+    width: 100%;
+    padding: 0;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  form h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  input[type='text'] {
+    padding: 7px;
+  }
+
+  textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    max-width: 50%;
+  }
+
   /* footer */
 
   footer {
