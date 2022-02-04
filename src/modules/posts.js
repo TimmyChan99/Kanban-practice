@@ -35,7 +35,6 @@ const addComment = async () => {
 
   if (!username && !comment) {
     toastMsg();
-    return null;
   }
 
   const newComment = {
@@ -47,8 +46,6 @@ const addComment = async () => {
   await postComment(BASE_URL, newComment);
   name.value = '';
   comments.value = '';
-
-  return newComment;
 };
 
 export default addComment;
