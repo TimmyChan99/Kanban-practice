@@ -12,7 +12,6 @@ import { likesCounter } from './modules/likesCounter.js';
 const elements = {};
 const API_KEY = '6z6I8v1vgq10YNsH5ORA';
 
-
 renderNavBar();
 
 window.addEventListener('load', () => {
@@ -22,9 +21,8 @@ window.addEventListener('load', () => {
 const eventLists = document.querySelector('.events_list');
 const modal = document.querySelector('.modal');
 eventLists.addEventListener('click', async (e) => {
-  e.stopPropagation();
   if (e.target.tagName === 'BUTTON') {
-    const { id } = e.target.parentNode;
+    const id = e.target.parentNode.id;
     elements.id = id;
     modal.style.display = 'block';
     modalDisplay(id, e);
